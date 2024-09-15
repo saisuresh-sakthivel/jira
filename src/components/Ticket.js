@@ -1,8 +1,12 @@
 import React from "react";
 
-export default function Ticket({ title }) {
+export default function Ticket({ id, title, dragStartHandler }) {
   return (
-    <div draggable="true" className="ticket">
+    <div
+      onDragStart={() => dragStartHandler(id)}
+      draggable="true"
+      className="ticket"
+    >
       {title}
     </div>
   );
